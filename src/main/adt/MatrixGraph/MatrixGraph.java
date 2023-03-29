@@ -58,7 +58,7 @@ public class MatrixGraph implements Graph {
       }
     }
 
-    return (Iterable<Edge>) list;
+    return list.data();
   }
 
   private boolean isDefined(int v, int i) {
