@@ -4,6 +4,8 @@ package adt.LinkedGraph;
 import adt.Edge;
 import adt.Interfaces.Graph;
 
+@SuppressWarnings("unchecked")
+
 public class LinkedGraph implements Graph {
 
   private int totalElems;
@@ -18,15 +20,23 @@ public class LinkedGraph implements Graph {
     for (int i = 0; i < arr.length; i++) {
       arr[i] = new EdgeLinkedList<Edge>();
     }
+
+  }
+
+  private boolean isOutOfRange(int v, int w) {
+    return v < 0 || w < 0 || v >= arr.length || w >= arr.length;
   }
 
   @Override
   public int size() {
-    return arr.length;
+    return arr.length - 1;
   }
 
   @Override
   public void addEdge(int v, int w, int weight) {
+    if (isOutOfRange(v, w) || hasEdge(v, w))
+      return;
+
     Edge edge = new Edge(v, w, weight);
     ((EdgeLinkedList<Edge>) (arr[v])).addElement(edge);
     edges++;
@@ -55,7 +65,7 @@ public class LinkedGraph implements Graph {
     for (Edge e : edges(v))
       if (e.vDest == w)
         return e.weight;
-    return 0;
+    return -1;
   }
 
   @Override

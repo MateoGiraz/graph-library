@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import adt.Interfaces.List;
 
+@SuppressWarnings("unchecked")
+
 public class EdgeLinkedList<Edge> implements List<Edge> {
 
   public class Node {
@@ -42,6 +44,7 @@ public class EdgeLinkedList<Edge> implements List<Edge> {
   public void addElement(Object data) {
     Node newNode = new Node((Edge) data);
     totalElements++;
+
     if (head == null) {
       head = newNode;
       return;

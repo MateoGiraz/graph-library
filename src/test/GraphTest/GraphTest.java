@@ -6,16 +6,15 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import adt.Edge;
 import adt.Interfaces.Graph;
-import adt.LinkedGraph.*;
-import adt.MatrixGraph.*;
+import adt.LinkedGraph.LinkedGraph;
+//import adt.MatrixGraph.MatrixGraph;
 
 public class GraphTest {
 
   @Test
   public void canCreateGraphOkTest() {
-    Graph g = new LinkedGraph(0);
+    new LinkedGraph(0);
   }
 
   @Test
