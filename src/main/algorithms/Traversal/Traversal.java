@@ -7,29 +7,29 @@ import java.util.*;
 import adt.Edge;
 
 public class Traversal {
-  Graph g;
-  Ifunction func;
-  boolean[] visited;
 
-  public Traversal(Graph g, Ifunction func) {
-    this.g = g;
-    this.func = func;
-    this.visited = new boolean[g.size()];
+  public static void DFS(Graph g, int v, Ifunction func) {
+    boolean[] visited = new boolean[g.size()];
+    DFS(v, g, func, visited);
   }
 
-  public void DFS(int v) {
+  private static void DFS(int v, Graph g, Ifunction func, boolean[] visited) {
     visited[v] = true;
-
     func.apply(v);
 
     for (Edge e : g.edges(v)) {
-      if (!visited[e.vDest])
-        DFS(e.vDest);
+      if (!visited[e.vDest]) {
+        DFS(e.vDest, g, func, visited);
+      }
     }
-
   }
 
-  public void BFS(int v) {
+  public static void BFS(Graph g, int v, Ifunction func) {
+    boolean[] visited = new boolean[g.size()];
+    BFS(v, g, func, visited);
+  }
+
+  private static void BFS(int v, Graph g, Ifunction func, boolean[] visited) {
     Queue<Integer> q = new LinkedList<Integer>();
 
     q.add(v);
