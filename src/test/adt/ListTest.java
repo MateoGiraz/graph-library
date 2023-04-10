@@ -1,4 +1,4 @@
-package test.ListTest;
+package test.adt;
 
 import static org.junit.Assert.assertEquals;
 
