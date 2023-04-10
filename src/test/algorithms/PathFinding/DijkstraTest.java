@@ -1,5 +1,6 @@
 package test.algorithms.PathFinding;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +9,7 @@ import org.junit.Test;
 
 import adt.Interfaces.Graph;
 import adt.LinkedGraph.LinkedGraph;
+import algorithms.PathFinding.PathFinding;
 
 public class DijkstraTest {
 
@@ -21,7 +23,9 @@ public class DijkstraTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 2, 3, 4 };
-    assertEquals(/* g.dijkstra(0) */1, arr);
+    int[] result = PathFinding.dijkstra(g, 0);
+
+    assertArrayEquals(result, arr);
   }
 
   @Test
@@ -33,8 +37,10 @@ public class DijkstraTest {
     g.addEdge(1, 3, 4);
     g.addEdge(2, 3, 1);
 
-    int[] arr = { 0, 2, -1, 3 };
-    assertEquals(/* g.dijkstra(0) */1, arr);
+    int[] arr = { 0, 2, -1, 0 };
+    int[] result = PathFinding.dijkstra(g, 0);
+
+    assertArrayEquals(result, arr);
   }
 
   @Test
@@ -43,10 +49,11 @@ public class DijkstraTest {
     Graph g = new LinkedGraph(4);
     g.addEdge(0, 1, 2);
     g.addEdge(0, 2, 3);
-    g.addEdge(1, 3, 4);
 
     int[] arr = { 0, 2, 3, Integer.MAX_VALUE };
-    assertEquals(/* g.dijkstra(0) */1, arr);
+    int[] result = PathFinding.dijkstra(g, 0);
+
+    assertArrayEquals(result, arr);
   }
 
   @Test
@@ -62,20 +69,10 @@ public class DijkstraTest {
     g.addEdge(3, 5, 5);
     g.addEdge(5, 6, 2);
 
-    int[] arr = { 0, 2, 3, 7, 9, 10, 12 };
-    assertEquals(/* g.dijkstra(0) */1, arr);
-  }
+    int[] arr = { 0, 2, 3, 6, 4, 5, 7 };
+    int[] result = PathFinding.dijkstra(g, 0);
 
-  @Test
-  public void negativeCycleGraph_ThrowsTest() {
-
-    Graph g = new LinkedGraph(4);
-    g.addEdge(0, 1, 2);
-    g.addEdge(1, 2, -1);
-    g.addEdge(2, 3, 4);
-    g.addEdge(3, 1, -3);
-
-    // expect to throw: Graph contains a negative cycle.
+    assertArrayEquals(result, arr);
   }
 
   @Test
@@ -88,8 +85,10 @@ public class DijkstraTest {
     g.addEdge(1, 3, 4);
     g.addEdge(2, 3, 1);
 
-    int[] arr = { 0, 2, 3, 7 };
-    assertEquals(/* g.dijkstra(0) */1, arr);
+    int[] arr = { 0, 2, 3, 4 };
+    int[] result = PathFinding.dijkstra(g, 0);
+
+    assertArrayEquals(result, arr);
   }
 
   @Test
@@ -104,7 +103,9 @@ public class DijkstraTest {
     g.addEdge(4, 3, 2);
 
     int[] arr = { 0, 2, 3, 4, 3 };
-    assertEquals(/* g.dijkstra(0) */1, arr);
+    int[] result = PathFinding.dijkstra(g, 0);
+
+    assertArrayEquals(result, arr);
   }
 
 }
