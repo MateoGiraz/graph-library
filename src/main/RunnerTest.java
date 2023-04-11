@@ -1,8 +1,8 @@
 import adt.Interfaces.Graph;
 import adt.LinkedGraph.LinkedGraph;
 import adt.MatrixGraph.MatrixGraph;
-import algorithms.PathFinding.PathFinding;
-import algorithms.Traversal.Traversal;
+import algorithms.PathFinding.Dijkstra;
+import algorithms.Traversal.DFS;
 
 public class RunnerTest {
 
@@ -13,7 +13,7 @@ public class RunnerTest {
     g.addEdge(1, 3, 1);
     g.addEdge(2, 3, 1);
 
-    Traversal.DFS(g, 0, (arg) -> {
+    DFS.solve(g, 0, (arg) -> {
       System.out.println(arg);
     });
   }
