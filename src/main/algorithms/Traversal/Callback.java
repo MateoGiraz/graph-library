@@ -1,5 +1,6 @@
 package algorithms.Traversal;
 
-public interface Ifunction {
+@FunctionalInterface
+public interface Callback {
   void apply(int arg);
 }
