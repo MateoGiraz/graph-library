@@ -20,7 +20,22 @@ public class TopoSortTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 1, 2, 3 };
-    int[] result = TopoSort.solve(g, 0);
+    int[] result = TopoSort.solve(g);
+
+    assertArrayEquals(result, arr);
+  }
+
+  @Test
+  public void secondSimpleGraph_OkTest() {
+
+    Graph g = new LinkedGraph(4);
+    g.addEdge(1, 0, 1);
+    g.addEdge(1, 2, 1);
+    g.addEdge(2, 0, 1);
+    g.addEdge(0, 3, 1);
+
+    int[] arr = { 1, 2, 0, 3 };
+    int[] result = TopoSort.solve(g);
 
     assertArrayEquals(result, arr);
   }
@@ -40,7 +55,7 @@ public class TopoSortTest {
     g.addEdge(3, 5, 1);
 
     int[] arr = { 0, 1, 2, 3, 4, 5 };
-    int[] result = TopoSort.solve(g, 0);
+    int[] result = TopoSort.solve(g);
 
     assertArrayEquals(result, arr);
   }
@@ -66,7 +81,7 @@ public class TopoSortTest {
     g.addEdge(3, 4, 1);
 
     int[] arr = { 0, 1, 2, 3, 4 };
-    int[] result = TopoSort.solve(g, 0);
+    int[] result = TopoSort.solve(g);
 
     assertArrayEquals(result, arr);
   }
