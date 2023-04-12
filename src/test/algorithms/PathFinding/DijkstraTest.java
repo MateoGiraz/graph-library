@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import adt.Interfaces.Graph;
 import adt.LinkedGraph.LinkedGraph;
-import algorithms.PathFinding.PathFinding;
+import algorithms.PathFinding.Dijkstra;
 
 public class DijkstraTest {
 
@@ -23,7 +23,7 @@ public class DijkstraTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 2, 3, 4 };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -38,7 +38,7 @@ public class DijkstraTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 2, -1, 0 };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -51,7 +51,7 @@ public class DijkstraTest {
     g.addEdge(0, 2, 3);
 
     int[] arr = { 0, 2, 3, Integer.MAX_VALUE };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -70,7 +70,7 @@ public class DijkstraTest {
     g.addEdge(5, 6, 2);
 
     int[] arr = { 0, 2, 3, 6, 4, 5, 7 };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -86,7 +86,7 @@ public class DijkstraTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 2, 3, 4 };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -103,7 +103,7 @@ public class DijkstraTest {
     g.addEdge(4, 3, 2);
 
     int[] arr = { 0, 2, 3, 4, 3 };
-    int[] result = PathFinding.dijkstra(g, 0);
+    int[] result = Dijkstra.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }

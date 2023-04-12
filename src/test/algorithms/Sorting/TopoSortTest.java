@@ -1,4 +1,4 @@
-package test.algorithms.PathFinding;
+package test.algorithms.Sorting;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import adt.Interfaces.Graph;
 import adt.LinkedGraph.LinkedGraph;
-import algorithms.PathFinding.PathFinding;
+import algorithms.Sorting.TopoSort;;
 
 public class TopoSortTest {
 
@@ -23,7 +23,7 @@ public class TopoSortTest {
     g.addEdge(2, 3, 1);
 
     int[] arr = { 0, 1, 2, 3 };
-    int[] result = PathFinding.topoSort(g, 0);
+    int[] result = TopoSort.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -43,7 +43,7 @@ public class TopoSortTest {
     g.addEdge(3, 5, 1);
 
     int[] arr = { 0, 1, 2, 3, 4, 5 };
-    int[] result = PathFinding.topoSort(g, 0);
+    int[] result = TopoSort.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }
@@ -69,7 +69,7 @@ public class TopoSortTest {
     g.addEdge(3, 4, 1);
 
     int[] arr = { 0, 1, 2, 3, 4 };
-    int[] result = PathFinding.topoSort(g, 0);
+    int[] result = TopoSort.solve(g, 0);
 
     assertArrayEquals(result, arr);
   }

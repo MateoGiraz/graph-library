@@ -6,10 +6,10 @@ import adt.Edge;
 import adt.Interfaces.Graph;
 
 public class Prim {
-  public static int[] solve(Graph g, int v) {
+  public static int[] solve(Graph g) {
 
     boolean[] visited = initVisited(g.size());
-    int[] cost = initCost(g.size(), v);
+    int[] cost = initCost(g.size(), 0);
     int[] parent = initParent(g.size());
 
     for (int i = 0; i < g.size(); i++) {
@@ -28,7 +28,7 @@ public class Prim {
 
     }
 
-    return cost;
+    return parent;
   }
 
   private static int minCostVertex(int[] cost, boolean[] visited) {
