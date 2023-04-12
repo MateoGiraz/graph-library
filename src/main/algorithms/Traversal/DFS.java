@@ -2,8 +2,6 @@ package algorithms.Traversal;
 
 import adt.Interfaces.Graph;
 
-import java.util.*;
-
 import adt.Edge;
 
 public class DFS {
