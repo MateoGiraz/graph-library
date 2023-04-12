@@ -1,5 +1,3 @@
-<br />
-
 # Implemented algorithms
 
 1. Traversal
