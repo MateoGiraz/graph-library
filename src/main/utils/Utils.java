@@ -2,7 +2,6 @@ package utils;
 
 import java.util.Arrays;
 
-import adt.Edge;
 import adt.Interfaces.Graph;
 
 public class Utils {
@@ -56,10 +55,11 @@ public class Utils {
 
   public static int[] initInputDegree(Graph g) {
     int[] ret = new int[g.size()];
-    for (int i = 0; i < g.size(); i++) {
-      for (Edge e : g.edges(i)) {
-        if (e.vDest == i) {
-          ret[i]++;
+
+    for (int i = 0; i < ret.length; i++) {
+      for (int j = 0; j < ret.length; j++) {
+        if (g.hasEdge(i, j)) {
+          ret[j]++;
         }
       }
     }

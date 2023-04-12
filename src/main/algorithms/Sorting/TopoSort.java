@@ -7,9 +7,10 @@ import adt.Interfaces.Graph;
 
 public class TopoSort {
 
-  public static int[] solve(Graph g, int v) {
+  public static int[] solve(Graph g) {
     boolean[] visited = Utils.initVisited(g.size());
     int[] inputDegree = Utils.initInputDegree(g);
+
     int[] ret = new int[g.size()];
 
     for (int i = 0; i < g.size(); i++) {
@@ -21,6 +22,7 @@ public class TopoSort {
       }
 
       ret[i] = ceroInputVertex;
+
       visited[ceroInputVertex] = true;
 
       for (Edge e : g.edges(ceroInputVertex)) {
