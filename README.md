@@ -1,10 +1,72 @@
-## Implemented algorithms
+# Implemented algorithms
 
-Dijkstra's algorithm\
-Prim's algorithm\
-Breadth-first search\
-Depth-first search\
-Topological sorting
+1. Traversal
+    1. [Breadth-first search](#bfs)
+    2. [Depth-first search](#dfs)
+2. Sorting
+    1. [Topological sort](#topoSort)
+3. Path Finding
+    1. [Dijkstra's algorithm](#Dijkstra)
+4. Minimum Spanning Tree
+    1. [Prim's algorithm](#Prim)
+
+# Traversal
+
+### Breadth-first search <a name="bfs"></a>
+BFS algorithm recibes the graph to be traversed, starting vertex and a callback function to be executed on every node.
+
+```java
+import algorithms.Traversal.BFS;
+
+BFS.solve(g, 0, (arg) -> {
+    System.out.println(arg);
+});
+```
+
+
+### Depth-first search <a name="dfs"></a>
+DFS algorithm recibes the graph to be traversed, starting vertex and a callback function to be executed on every node.
+
+```java
+import algorithms.Traversal.DFS;
+
+DFS.solve(g, 0, (arg) -> {
+    System.out.println(arg);
+});
+```
+
+# Sorting 
+
+### Topological Sort <a name="topoSort"></a>
+Topological sort algorithm recibes a graph, and returns a sorted array representing one possible topological sort.
+
+```java
+import algorithms.Sorting.TopoSort;
+
+int[] result = TopoSort.solve(g);
+```
+
+# PathFinding
+
+### Dijkstra's algorithm <a name="Dijkstra"></a>
+Dijkstra's algorithm recibes a graph, starting index, and returns an array representing minimum travelling cost to every node.
+
+```java
+import algorithms.PathFinding.Dijkstra;
+
+int[] result = Dijkstra.solve(g, 0);
+```
+## Minimun Spanning Tree
+
+### Prim's algorithm <a name="Prim"></a>
+Prim's algorithm recibes a graph, and returns an array in which every node (position) contains its parent. Therefore MST can be constructed.
+
+```java
+import algorithms.MST.Prim;
+
+int[] result = Prim.solve(g);
+```
+
 
 ## Algorithm ideas:
 
