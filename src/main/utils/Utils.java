@@ -36,6 +36,20 @@ public class Utils {
     return ret;
   }
 
+  public static int[][] initCost(int size) {
+    int[][] ret = new int[size][size];
+
+    for (int[] a : ret) {
+      Arrays.fill(a, Integer.MAX_VALUE);
+    }
+
+    for (int i = 0; i < size; i++) {
+      ret[i][i] = 0;
+    }
+
+    return ret;
+  }
+
   public static boolean[] initVisited(int size) {
     boolean[] ret = new boolean[size];
 
