@@ -50,6 +50,20 @@ public class Utils {
     return ret;
   }
 
+  public static boolean[][] initBoolMat(int size) {
+    boolean[][] ret = new boolean[size][size];
+
+    for (boolean[] a : ret) {
+      Arrays.fill(a, false);
+    }
+
+    for (int i = 0; i < size; i++) {
+      ret[i][i] = true;
+    }
+
+    return ret;
+  }
+
   public static boolean[] initVisited(int size) {
     boolean[] ret = new boolean[size];
 
