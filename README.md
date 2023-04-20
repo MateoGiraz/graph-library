@@ -7,6 +7,7 @@
     1. [Topological sort](#toposort)
 3. Path Finding
     1. [Dijkstra's algorithm](#dijkstra)
+    2. [Floyd's algorithm](#floyd)
 4. Minimum Spanning Tree
     1. [Prim's algorithm](#prim)
     
@@ -58,6 +59,15 @@ Dijkstra's algorithm recibes a graph, starting index, and returns an array repre
 import algorithms.PathFinding.Dijkstra;
 
 int[] result = Dijkstra.solve(g, 0);
+```
+
+### Floyd's algorithm <a name="floyd"></a>
+Floyd's algorithm recibes a graph and returns a matrix representing minimum travelling between every node.
+
+```java
+import algorithms.PathFinding.Floyd;
+
+int[][] result = Floyd.solve(g);
 ```
 
 <br />
