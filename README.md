@@ -97,6 +97,10 @@ int[] result = Prim.solve(g);
 
 # Algorithm ideas:
 
+Bridge Detection
+Graph Coloring
+Cycle detection
+
 A\* search algorithm\
 Alpha–beta pruning\
 Aperiodic graph
