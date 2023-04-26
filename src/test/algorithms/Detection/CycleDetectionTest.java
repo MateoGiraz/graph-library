@@ -1,4 +1,4 @@
-package test.algorithms.CycleDetection;
+package test.algorithms.Detection;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertFalse;
