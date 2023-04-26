@@ -16,6 +16,8 @@
 6. Detection
     1. [Cycle Detection algorithm](#cycledetection)
     2. [Connected Components algorithm](#conncomponents)
+    3. [Bridge Detection algorithm](#bridge)
+
 
     
 <br />
@@ -134,12 +136,20 @@ import algorithms.Detection.ConnectedComponents;
  totalComponents = result.size();
 ```
 
+### Bridge Detection algorithm <a name="bridge"></a>
+Connected Components algorithm recibes a graph, and returns a list of bridges (Edge list). If graph is directed, algorithm solves strongly connected components problem.
+
+```javascript
+import adt.Edge;
+import algorithms.Detection.BridgeDetection;
+
+List<Edge> result = BridgeDetection.solve(g);
+```
+
 <br />
 
 
 # Algorithm ideas:
-
-Bridge Detection
 
 A\* search algorithm\
 Alpha–beta pruning\
