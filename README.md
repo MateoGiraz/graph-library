@@ -13,6 +13,8 @@
     1. [Prim's algorithm](#prim)
 5. Coloring
     1. [Greedy Coloring algorithm](#greedycoloring)
+6. Detection
+    1. [Cycle Detection algorithm](#cycledetection)
     
 <br />
 
@@ -108,11 +110,22 @@ int[] result = GreedyColoring.solve(g);
 ```
 <br />
 
+# Detection
+
+### Cycle Detection algorithm <a name="cycledetection"></a>
+Cycle Detection algorithm recibes a directed graph, and returns wether it contains a cycle.
+
+```java
+import algorithms.Detection.CycleDetection;
+
+boolean result = CycleDetection.solve(g);
+```
+<br />
+
+
 # Algorithm ideas:
 
 Bridge Detection
-Graph Coloring
-Cycle detection
 
 A\* search algorithm\
 Alpha–beta pruning\
