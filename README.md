@@ -8,6 +8,7 @@
 3. Path Finding
     1. [Dijkstra's algorithm](#dijkstra)
     2. [Floyd's algorithm](#floyd)
+    3. [Warshall's algorithm](#warshall)
 4. Minimum Spanning Tree
     1. [Prim's algorithm](#prim)
     
@@ -70,6 +71,15 @@ import algorithms.PathFinding.Floyd;
 int[][] result = Floyd.solve(g);
 ```
 
+### Warshall's algorithm <a name="warshall"></a>
+Warshall's algorithm recibes a graph and returns a matrix representing wether there is a path between nodes.
+
+```java
+import algorithms.PathFinding.Warshall;
+
+boolean[][] result = Warshall.solve(g);
+```
+
 <br />
 
 # Minimun Spanning Tree
@@ -86,6 +96,10 @@ int[] result = Prim.solve(g);
 <br />
 
 # Algorithm ideas:
+
+Bridge Detection
+Graph Coloring
+Cycle detection
 
 A\* search algorithm\
 Alpha–beta pruning\
