@@ -15,6 +15,8 @@
     1. [Greedy Coloring algorithm](#greedycoloring)
 6. Detection
     1. [Cycle Detection algorithm](#cycledetection)
+    2. [Connected Components algorithm](#conncomponents)
+
     
 <br />
 
@@ -23,7 +25,7 @@
 ### Breadth-first search <a name="bfs"></a>
 BFS algorithm recibes the graph to be traversed, starting vertex and a callback function to be executed on every node.
 
-```java
+```javascript
 import algorithms.Traversal.BFS;
 
 BFS.solve(g, 0, (arg) -> {
@@ -34,7 +36,7 @@ BFS.solve(g, 0, (arg) -> {
 ### Depth-first search <a name="dfs"></a>
 DFS algorithm recibes the graph to be traversed, starting vertex and a callback function to be executed on every node.
 
-```java
+```javascript
 import algorithms.Traversal.DFS;
 
 DFS.solve(g, 0, (arg) -> {
@@ -48,7 +50,7 @@ DFS.solve(g, 0, (arg) -> {
 ### Topological Sort <a name="toposort"></a>
 Topological sort algorithm recibes a graph, and returns a sorted array representing one possible topological sort.
 
-```java
+```javascript
 import algorithms.Sorting.TopoSort;
 
 int[] result = TopoSort.solve(g);
@@ -60,7 +62,7 @@ int[] result = TopoSort.solve(g);
 ### Dijkstra's algorithm <a name="dijkstra"></a>
 Dijkstra's algorithm recibes a graph, starting index, and returns an array representing minimum travelling cost to every node.
 
-```java
+```javascript
 import algorithms.PathFinding.Dijkstra;
 
 int[] result = Dijkstra.solve(g, 0);
@@ -69,7 +71,7 @@ int[] result = Dijkstra.solve(g, 0);
 ### Floyd's algorithm <a name="floyd"></a>
 Floyd's algorithm recibes a graph and returns a matrix representing minimum travelling between every node.
 
-```java
+```javascript
 import algorithms.PathFinding.Floyd;
 
 int[][] result = Floyd.solve(g);
@@ -78,7 +80,7 @@ int[][] result = Floyd.solve(g);
 ### Warshall's algorithm <a name="warshall"></a>
 Warshall's algorithm recibes a graph and returns a matrix representing wether there is a path between nodes.
 
-```java
+```javascript
 import algorithms.PathFinding.Warshall;
 
 boolean[][] result = Warshall.solve(g);
@@ -91,7 +93,7 @@ boolean[][] result = Warshall.solve(g);
 ### Prim's algorithm <a name="prim"></a>
 Prim's algorithm recibes a graph, and returns an array in which every node (position) contains its parent. Therefore MST can be constructed.
 
-```java
+```javascript
 import algorithms.MST.Prim;
 
 int[] result = Prim.solve(g);
@@ -103,7 +105,7 @@ int[] result = Prim.solve(g);
 ### Greedy Coloring algorithm <a name="greedycoloring"></a>
 Greedy Coloring algorithm recibes an undirected graph, and returns an array in which every node (position) contains its corresponding color (represented as integer). Coloring makes no sense for directed graphs.
 
-```java
+```javascript
 import algorithms.Coloring.GreedyColoring;
 
 int[] result = GreedyColoring.solve(g);
@@ -115,11 +117,23 @@ int[] result = GreedyColoring.solve(g);
 ### Cycle Detection algorithm <a name="cycledetection"></a>
 Cycle Detection algorithm recibes a directed graph, and returns wether it contains a cycle.
 
-```java
+```javascript
 import algorithms.Detection.CycleDetection;
 
 boolean result = CycleDetection.solve(g);
 ```
+
+### Connected Components algorithm <a name="conncomponents"></a>
+Connected Components algorithm recibes a graph, and returns a list of connected components (Edge list)
+
+```javascript
+import adt.Edge;
+import algorithms.Detection.ConnectedComponents;
+
+ List<List<Edge>> result = ConnectedComponents.solve(g);
+ totalComponents = result.size();
+```
+
 <br />
 
 
