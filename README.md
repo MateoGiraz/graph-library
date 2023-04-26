@@ -11,6 +11,8 @@
     3. [Warshall's algorithm](#warshall)
 4. Minimum Spanning Tree
     1. [Prim's algorithm](#prim)
+5. Coloring
+    1. [Greedy Coloring algorithm](#greedycoloring)
     
 <br />
 
@@ -92,7 +94,18 @@ import algorithms.MST.Prim;
 
 int[] result = Prim.solve(g);
 ```
+<br />
 
+# Graph Coloring
+
+### Greedy Coloring algorithm <a name="greedycoloring"></a>
+Greedy Coloring algorithm recibes an undirected graph, and returns an array in which every node (position) contains its corresponding color (represented as integer). Coloring makes no sense for directed graphs.
+
+```java
+import algorithms.Coloring.GreedyColoring;
+
+int[] result = GreedyColoring.solve(g);
+```
 <br />
 
 # Algorithm ideas:
