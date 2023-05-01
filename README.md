@@ -1,4 +1,43 @@
-# Implemented algorithms
+# Graph Library
+Java library containing basic graph algorithms. Fast and easy to use.
+## Getting started
+To include this library in your project, follow the instructions on the [jitpack website](https://jitpack.io/#MateoGiraz/graph-library).
+## Usage
+Usage is pretty pretty straightforward. Graph construction
+
+```javascript
+Graph graph = new LinkedGraph(0); // or new MatrixGraph<>();
+
+for (int i = 0; i < 10; i++) {
+  for (int j = 0; j < 5; j++) {
+    graph.addEdge(i, j, 1); // vertex, vertex, weight
+  }
+}
+```
+Remove Edge
+```javascript
+graph.removeEdge(1, 2);
+```
+Graph size
+```javascript
+int size = graph.size();
+```
+Edge count for whole graph, or particular vertex
+```javascript
+int edges = graph.edgeCount();
+int sevenEdges = graph.edgeCount(7);
+```
+Check weight, edge existance
+```javascript
+boolean containsVertex = graph.hasEdge(1, 3);
+int weight = graph.getWeight(1, 3);
+```
+Iterate over edges
+```javascript
+Iterable<Edge> edges = graph.edges(3);
+```
+
+# Algorithms
 
 1. Traversal
     1. [Breadth-first search](#bfs)
@@ -18,10 +57,7 @@
     2. [Connected Components algorithm](#conncomponents)
     3. [Bridge Detection algorithm](#bridge)
 
-
     
-<br />
-
 # Traversal
 
 ### Breadth-first search <a name="bfs"></a>
