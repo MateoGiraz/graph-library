@@ -1,7 +1,5 @@
 # Graph Library
 Java library containing basic graph algorithms. Fast and easy to use.
-## Getting started
-To include this library in your project, follow the instructions on the [jitpack website](https://jitpack.io/#MateoGiraz/graph-library).
 ## Usage
 Usage is pretty pretty straightforward. Graph construction
 
